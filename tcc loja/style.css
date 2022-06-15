@@ -1,0 +1,37 @@
+* {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+#titulo {
+ text-align: center;
+}
+
+#paragrafo {
+ font-size: 1.1em;
+}
+
+#botao-carregar {
+ width: 100px;
+ padding: 10px; 
+ border: 0; 
+ background-color: blue;
+ color: white; 
+ border-radius: 5px;
+}
+
+#tabela-produtos_loja {
+ border-collapse: collapse;
+}
+
+#tabela-produtos_loja th,
+#tabela-produtos_loja td {
+ border: 1px solid black;
+ padding: 10px;
+ text-align: center;
+}
+
+#tabela-produtos_loja tr:hover td {
+ background-color: rgba(0, 0, 0, 0.2);
+}
+
+
