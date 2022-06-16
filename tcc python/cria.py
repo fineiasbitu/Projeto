@@ -10,7 +10,7 @@ produtos_loja = [
     (None, 'victor hugo', 'transversal corrente', 'preta', 'g', 5, 600)
 ]
 
-cur.executemany("INSERT INTO produtos_loja VALUES (?, ?, ?, ?, ?, ?)", produtos_loja)
+cur.executemany("INSERT INTO produtos_loja VALUES (?, ?, ?, ?, ?, ?, ?)", produtos_loja)
 
 con.commit()
 con.close()

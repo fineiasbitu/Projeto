@@ -17,7 +17,7 @@ consulta = """CREATE TABLE produtos_loja (
     cor TEXT,
     tamanho INTEGER,
     quantidade REAL,
-    preco REAL,
+    preco REAL
     )
     """
 cursor.execute(consulta) # Executa a consulta SQL
