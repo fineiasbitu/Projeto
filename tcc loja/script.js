@@ -1,49 +1,49 @@
-const botao = document.querySelector("#botao-carregar");
-const tabela = document.querySelector("#tabela-produtos_loja");
-
-botao.addEventListener("click", function () {
-  carregarDados();
-});
-function carregarDados() {
-    fetch("http://127.0.0.1:5000/todos")
-      .then(function (resposta) {
-        return resposta.json();
-      })
-      .then(function (listaprodutos_loja) {
-        popularTabela(listaprodutos_loja);
-      });
-  }
-  function popularTabela(listaprodutos_loja) {
-    const tamanhoLista = listaprodutos_loja.length;
-  
-    for (let index = 0; index < tamanhoLista; index++) {
-      const linha = document.createElement("tr");
-  
-      const id = document.createElement("td");
-      const nome = document.createElement("td");
-      const modelo = document.createElement("td");
-      const cor = document.createElement("td");
-      const tamanho = document.createElement("td");
-      const quantidade = document.createElement("td");
-      const preco = document.createElement("td");
-  
-      id.innerHTML = listaprodutos_loja[index][0];
-      nome.innerHTML = listaprodutos_loja[index][1];
-      modelo.innerHTML = listaprodutos_loja[index][2];
-      cor.innerHTML = listaprodutos_loja[index][3];
-      tamanho.innerHTML = listaprodutos_loja[index][4];
-      quantidade.innerHTML = listaprodutos_loja[index][5];
-      preco.innerHTML = listaprodutos_loja[index][6];
-  
-      linha.appendChild(id);
-      linha.appendChild(nome);
-      linha.appendChild(modelo);
-      linha.appendChild(cor);
-      linha.appendChild(tamanho);
-      linha.appendChild(quantidade);
-      linha.appendChild(preco);
-      
-      tabela.appendChild(linha);
+var produtos = [
+    {
+        imagem:'https://cf.shopee.com.br/file/9d7bb814b51ff7699407dd4faaab7de5',
+        nome:'Mochila de costas Louis Vuitton',
+        texto:'Mochila com design moderno e elegante.'
+    },
+    {
+        imagem:'https://images-shoptime.b2w.io/produtos/4155146995/imagens/bolsa-cross-body-victoria-s-secret-v-quilt-shoulder-bag-preta-corrente/4155146995_1_large.jpg',
+        nome:'Bolsa transversal Victoria Secrets branca',
+        texto:'Bolsa ideal para todas as ocasiões.'
+    },
+    {
+        imagem:'https://cf.shopee.com.br/file/95c9ab3ce265ee3dbd499a9d80ad2ba6',
+        nome:'Bolsa transversal corrente Victor Hugo',
+        texto:'Bolsa de alta qualidade com design arrojado e moderno.'
+    },
+    {
+        imagem:'https://passoapasso.com/wp-content/uploads/2017/01/Bolsas-importadas-01.jpg',
+        nome:'Bolsa tiracolo Louis Vuitton',
+        texto:'Design e sofisticação.'
+    }, {
+        imagem:'https://cdn.fashiola.mx/L541594094/gucci-bolso-ophidia-gg-supreme.jpg',
+        nome:'Bolsa transversal da Gucci',
+        texto:'Bolsa de luxo da alta moda.'
+    },
+    {
+        imagem:'https://images-na.ssl-images-amazon.com/images/I/A17ltad0vCL._UX500_.jpg',
+        nome:'Bolsa Michael Kors',
+        texto:'Bolsa MK luxo e sofisticação.',
     }
-  }
-  
+]
+
+produtos.map((produto) => {
+    document.getElementById('produtos').innerHTML += `
+        <div class="produto">   
+            <img src="${produto.imagem}">
+            <div>
+                <h2>${produto.nome}</h2>
+                <hr>
+                <p>${produto.texto}</p>
+            </div>
+            <a href="./tabela.html">Comprar</a>
+        </div>
+    `
+        // O botão de comprar foi tirado da div interna
+        // e jogado para a div .produto
+})
+
+
