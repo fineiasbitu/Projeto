@@ -14,7 +14,7 @@
  width: 100px;
  padding: 10px; 
  border: 0; 
- background-color: blue;
+ background-color: rgb(111, 111, 235);
  color: white; 
  border-radius: 5px;
 }
@@ -23,7 +23,12 @@
  border-collapse: collapse;
 }
 
-#tabela-produtos_loja th,
+#tabela-produtos_loja th {
+  background-color: rosybrown;
+  border: 1px solid black;
+  padding: 10px;
+}
+
 #tabela-produtos_loja td {
  border: 1px solid black;
  padding: 10px;
