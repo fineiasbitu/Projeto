@@ -16,7 +16,7 @@ consulta = """CREATE TABLE produtos_loja (
     modelo TEXT,
     cor TEXT,
     tamanho INTEGER,
-    quantidade REAL,
+    quantidade INTEGER,
     preco REAL
     )
     """
